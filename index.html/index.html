@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siva Teja Mallipamula - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            color: white;
+            animation: fadeIn 1s ease-in;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .tagline {
+            font-size: 1.3em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .header-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .header-links a {
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 25px;
+            transition: background 0.3s;
+            font-size: 0.9em;
+        }
+
+        .header-links a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        nav {
+            background: rgba(255,255,255,0.95);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 600;
+            transition: color 0.3s;
+            padding: 5px 10px;
+        }
+
+        nav a:hover {
+            color: #764ba2;
+        }
+
+        section {
+            background: white;
+            margin: 30px 0;
+            padding: 50px 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            animation: slideUp 0.6s ease-out;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .education-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .education-item h3 {
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+
+        .education-item .degree {
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .education-item .details {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102,126,234,0.4);
+        }
+
+        .skill-card h3 {
+            margin-bottom: 12px;
+            font-size: 1.3em;
+        }
+
+        .skill-card p {
+            line-height: 1.8;
+            font-size: 0.95em;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            padding: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102,126,234,0.3);
+        }
+
+        .project-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .cert-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .cert-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #764ba2;
+        }
+
+        .cert-item h4 {
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .cert-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .cert-link:hover {
+            color: #764ba2;
+        }
+
+        .internship-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        .internship-item h3 {
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+
+        .internship-item .company {
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .internship-item .date {
+            color: #888;
+            font-size: 0.9em;
+            margin-bottom: 12px;
+        }
+
+        .achievements-list {
+            list-style: none;
+        }
+
+        .achievements-list li {
+            padding: 15px;
+            margin-bottom: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+            position: relative;
+            padding-left: 45px;
+        }
+
+        .achievements-list li:before {
+            content: "🏆";
+            position: absolute;
+            left: 15px;
+            font-size: 1.3em;
+        }
+
+        .contact-info {
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .contact-info a:hover {
+            color: #764ba2;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            opacity: 0.9;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            section {
+                padding: 30px 20px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .header-links {
+                font-size: 0.85em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SIVA TEJA MALLIPAMULA</h1>
+            <p class="tagline">Full Stack Developer | UX Designer | Problem Solver</p>
+            <div class="header-links">
+                <a href="mailto:mallipamulasivateja12@gmail.com">📧 Email</a>
+                <a href="tel:8712122339">📱 8712122339</a>
+                <a href="https://www.linkedin.com/in/siva-teja-mallipamula-" target="_blank">💼 LinkedIn</a>
+                <a href="https://www.hackerrank.com/profile/mallipamulasiva1" target="_blank">💻 HackerRank</a>
+                <a href="https://leetcode.com/u/nnht6lQooP/" target="_blank">🔗 LeetCode</a>
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#internships">Experience</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="profile-img">ST</div>
+                <div class="about-text">
+                    <p>Hello! I'm a final-year Electronics and Communication Engineering student at Pragati Engineering College. I enjoy working on user experience and team-based product development. I use my technical skills and creativity to build web applications that are easy to use and reliable.</p>
+                    <br>
+                    <p>I have experience in full-stack development and UX design, and I'm excited to bring my skills to new projects. I like learning about the latest technologies, including web frameworks, cloud tools, and AI.</p>
+                    <br>
+                    <p>📍 Based in Kakinada, Andhra Pradesh</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Pragati Engineering College, Surampalem</h3>
+                <div class="degree">Bachelor's Degree in Electronics and Communication Engineering</div>
+                <div class="details">2022 – 2026 | CGPA: 7.5/10</div>
+            </div>
+            <div class="education-item">
+                <h3>Aditya Junior College, Kakinada</h3>
+                <div class="degree">Intermediate (MPC)</div>
+                <div class="details">2020 – 2022 | Percentage: 75%</div>
+            </div>
+            <div class="education-item">
+                <h3>Bhashyam School</h3>
+                <div class="degree">SSC (Secondary School Certificate)</div>
+                <div class="details">2019 – 2020 | Percentage: 90%</div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>💻 Programming</h3>
+                    <p>Python • C Programming • Java</p>
+                </div>
+                <div class="skill-card">
+                    <h3>🌐 Web Development</h3>
+                    <p>HTML • CSS • JavaScript • React.js • Next.js • Node.js • Express.js</p>
+                </div>
+                <div class="skill-card">
+                    <h3>🎨 UX & Design</h3>
+                    <p>User Research • Data Analysis • User Feedback Integration • Figma • Adobe XD</p>
+                </div>
+                <div class="skill-card">
+                    <h3>☁️ Cloud & Tools</h3>
+                    <p>AWS (S3, Glue, Redshift, Athena) • Zscaler Zero Trust • Git</p>
+                </div>
+                <div class="skill-card">
+                    <h3>🤝 Professional Skills</h3>
+                    <p>Leadership • Communication • Time Management • Team Collaboration • Agile Methods</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>📄 Resume Builder Web App</h3>
+                    <p>Developed a handy web tool for creating top-notch resumes with customizable designs. Users can experiment with different templates according to their preferences. Built using HTML, CSS, and Python for seamless functionality and user experience.</p>
+                </div>
+                <div class="project-card">
+                    <h3>🤖 AI Chatbot Buddy</h3>
+                    <p>Configured an intelligent chatbot using OpenAI API that provides helpful answers and engages in meaningful conversations. Tested and optimized various prompting methods to enhance response quality and conversational style, making interactions more natural and effective.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="internships">
+            <h2>Internships & Experience</h2>
+            <div class="internship-item">
+                <h3>Zscaler Zero Trust Cloud Security Virtual Internship</h3>
+                <div class="company">Zscaler</div>
+                <div class="date">March 2025 - May 2025</div>
+                <p>Completed comprehensive training on Zero Trust security principles and architecture. Earned the Zscaler Zero Trust Certified Associate (ZTCA) certification, mastering core concepts of modern cloud security and Zero Trust implementation.</p>
+            </div>
+            <div class="internship-item">
+                <h3>AWS Data Engineering Virtual Internship</h3>
+                <div class="company">Amazon Web Services</div>
+                <div class="date">July 2024 - September 2024</div>
+                <p>Focused on foundational Data Engineering concepts and gained hands-on experience with AWS data engineering tools including Amazon S3, AWS Glue, Redshift, and Athena. Developed practical skills in data pipeline creation and management.</p>
+            </div>
+            <div class="internship-item">
+                <h3>Google for Developer Program</h3>
+                <div class="company">AICTE Eduskill</div>
+                <div class="date">January 2024 - March 2024</div>
+                <p>Gained practical experience in software development through Google's developer program. Enhanced enthusiasm for technology and developed hands-on skills in modern development practices and tools.</p>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <div class="cert-list">
+                <div class="cert-item">
+                    <h4>Salesforce Certified AI Associate Specialist</h4>
+                    <p>Salesforce</p>
+                    <a href="https://drive.google.com/file/d/1q-2I5e6nUeJrSUDPApGMJJI-Y3y7s3RC/view?usp=drive_link" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+                <div class="cert-item">
+                    <h4>Salesforce Certified Agentforce Specialist</h4>
+                    <p>Salesforce</p>
+                    <a href="https://drive.google.com/file/d/17ul_Z7asBWncHbjVJoc-h8JDxuD0naq6/view?usp=drive_link" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+                <div class="cert-item">
+                    <h4>Oracle Cloud Infrastructure 2025 Certified Generative AI Professional</h4>
+                    <p>Oracle University</p>
+                    <a href="https://drive.google.com/file/d/1Q37ImVlkcUfrcz96EiBduolSerTuQ80o/view?usp=drive_link" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+                <div class="cert-item">
+                    <h4>Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</h4>
+                    <p>Oracle University</p>
+                    <a href="https://drive.google.com/file/d/1ZAw6imvTz1Ri7vHhUmpqe8Yx4G5Np2ps/view?usp=drive_link" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+                <div class="cert-item">
+                    <h4>Oracle Cloud Infrastructure 2025 Certified Foundations Associate</h4>
+                    <p>Oracle University</p>
+                    <a href="https://drive.google.com/file/d/1O694uh7AUilAFOgMP81ICZQnL2gPahyb/view?usp=drive_link" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+                <div class="cert-item">
+                    <h4>Zscaler Zero Trust Associate (ZTCA)</h4>
+                    <p>Zscaler</p>
+                    <a href="https://drive.google.com/file/d/1h3-1-SZO-pWF5zELqcTWeQD968oms31I/view?usp=drive_link" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+                <div class="cert-item">
+                    <h4>Java Full Stack Developer</h4>
+                    <p>Certification Program</p>
+                    <a href="https://drive.google.com/file/d/18F7zB3-NU54Oon9akL1RwVijioZrqwdN/view?usp=drive_link" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+                <div class="cert-item">
+                    <h4>Introduction to Generative AI Studio</h4>
+                    <p>Google Cloud (Simplilearn & SkillUp)</p>
+                    <a href="https://drive.google.com/file/d/1evK0urr4gfkVfcH0HYrQjCayVLf3Bi7X/view?usp=drive_link" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+                <div class="cert-item">
+                    <h4>Java (Basic)</h4>
+                    <p>HackerRank</p>
+                    <a href="https://drive.google.com/file/d/1tn0LdO4xdrtDxM9DTfPzZbYYMQ9ltAR5/view?usp=drive_link" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+                <div class="cert-item">
+                    <h4>SQL (Basic)</h4>
+                    <p>HackerRank</p>
+                    <a href="https://drive.google.com/file/d/19p2e6HWoaIWKVjgkyMy1VLdKdUprGqNz/view?usp=drive_link" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+                <div class="cert-item">
+                    <h4>Problem Solving (Basic)</h4>
+                    <p>HackerRank</p>
+                    <a href="https://drive.google.com/file/d/1Ec5ZSTDLMzD8Mf5AHi2Q1JyqzFmrzgmT/view?usp=drive_link" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+                <div class="cert-item">
+                    <h4>IoT Software Analyst Virtual Internship</h4>
+                    <p>CSC India - AICTE (Council for Skills and Competencies)</p>
+                    <a href="https://drive.google.com/file/d/1K96ml7MugxObQ1n0xl6s-WW2VMKY9tTx/view?usp=drive_link" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+                <div class="cert-item">
+                    <h4>Cloud Virtual Internship</h4>
+                    <p>AICTE - AWS Academy & EduSkills</p>
+                    <a href="https://drive.google.com/file/d/1UJ_nMz8R5mQBmnztaJ-S_tyGGxq6UtQ1/view?usp=drive_link" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+                <div class="cert-item">
+                    <h4>Embedded System Developer Virtual Internship</h4>
+                    <p>AICTE - Microchip & EduSkills</p>
+                    <a href="https://drive.google.com/file/d/1DzVZH1uPVmNZpm3_r3efLyvcc4_O6eAe/view?usp=drive_link" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+                <div class="cert-item">
+                    <h4>Python Fullstack Developer Virtual Internship</h4>
+                    <p>AICTE - EduSkills Academy</p>
+                    <a href="https://drive.google.com/file/d/1Jvv4eIoANqihkPfyN9N9Kb4yXSZEvQoo/view?usp=drive_link" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+                <div class="cert-item">
+                    <h4>Data Science using Python Workshop</h4>
+                    <p>Pragati Engineering College - BrainOVision Solutions</p>
+                    <a href="https://drive.google.com/file/d/1MYHLy9TZdWe2wV0-uRIPOK7o2U2EdZT6/view?usp=drive_link" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+                <div class="cert-item">
+                    <h4>Innovation, Design and Entrepreneurship (IDE) Bootcamp</h4>
+                    <p>AICTE & MIC - IIM Sambalpur</p>
+                    <a href="https://drive.google.com/file/d/11I9iUfI160448-KuQwTjfBQ3FuqxIcWu/view?usp=drive_link" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <h2>Achievements</h2>
+            <ul class="achievements-list">
+                <li>Solved 200+ coding problems on LeetCode, demonstrating strong problem-solving abilities</li>
+                <li>Earned 5-star rating in both Python and Java on HackerRank</li>
+                <li>Delivered several web-based projects with intuitive design and robust performance</li>
+                <li>Lead Coordinator for PRISM 2K25 – Successfully organized cultural events in college fest (2025)</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-info">
+                <p>I'd love to connect and discuss opportunities or collaborations!</p>
+                <br>
+                <p>
+                    <a href="mailto:mallipamulasivateja12@gmail.com">📧 mallipamulasivateja12@gmail.com</a><br>
+                    <a href="tel:8712122339">📱 8712122339</a><br>
+                    <a href="https://www.linkedin.com/in/siva-teja-mallipamula-" target="_blank">💼 LinkedIn</a>
+                    <a href="https://www.hackerrank.com/profile/mallipamulasiva1" target="_blank">💻 HackerRank</a>
+                    <a href="https://leetcode.com/u/nnht6lQooP/" target="_blank">🔗 LeetCode</a>
+                </p>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Siva Teja Mallipamula. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
