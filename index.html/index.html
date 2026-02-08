@@ -10,75 +10,135 @@
 
 body{
 font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
-line-height:1.6;
+background:linear-gradient(135deg,#667eea,#764ba2);
 color:#333;
-background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
-min-height:100vh;
 }
 
 .container{max-width:1200px;margin:auto;padding:20px}
 
-header{text-align:center;padding:80px 20px;color:white}
-h1{font-size:3em}
-.tagline{font-size:1.3em;margin-bottom:20px}
+header{
+text-align:center;
+padding:80px 20px;
+color:white;
+}
+
+header h1{font-size:3em}
+.tagline{font-size:1.3em;margin:15px 0}
 
 .header-links{
-display:flex;justify-content:center;gap:15px;flex-wrap:wrap
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
 }
+
 .header-links a{
-color:white;text-decoration:none;
-background:rgba(255,255,255,0.2);
-padding:8px 20px;border-radius:25px
+color:white;
+text-decoration:none;
+background:rgba(255,255,255,0.25);
+padding:8px 18px;
+border-radius:25px;
 }
-.header-links a:hover{background:rgba(255,255,255,0.3)}
 
 nav{
-background:white;padding:15px;position:sticky;top:0;
-box-shadow:0 2px 10px rgba(0,0,0,0.1)
+background:white;
+padding:15px;
+margin-top:20px;
+border-radius:10px;
 }
-nav ul{display:flex;justify-content:center;gap:20px;list-style:none}
-nav a{text-decoration:none;color:#667eea;font-weight:600}
+
+nav ul{
+display:flex;
+justify-content:center;
+gap:20px;
+list-style:none;
+flex-wrap:wrap;
+}
+
+nav a{
+text-decoration:none;
+color:#667eea;
+font-weight:600;
+}
 
 section{
-background:white;margin:30px 0;padding:50px 40px;
-border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,0.1)
+background:white;
+margin:30px 0;
+padding:40px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
 }
-h2{color:#667eea;margin-bottom:25px;border-bottom:3px solid #667eea}
 
+h2{
+color:#667eea;
+border-bottom:3px solid #667eea;
+margin-bottom:25px;
+padding-bottom:5px;
+}
+
+/* Skills */
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.skill-card{
+background:linear-gradient(135deg,#667eea,#764ba2);
+color:white;
+padding:20px;
+border-radius:10px;
+}
+
+/* Projects */
 .projects-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px
+gap:25px;
 }
 
 .project-card{
 border:2px solid #667eea;
-border-radius:10px;
 padding:25px;
-transition:0.3s
+border-radius:10px;
+transition:.3s;
 }
+
 .project-card:hover{
 transform:translateY(-5px);
-box-shadow:0 10px 25px rgba(102,126,234,0.3)
+box-shadow:0 10px 25px rgba(102,126,234,0.3);
 }
 
 .project-links{
 margin-top:15px;
 display:flex;
-gap:12px;
-flex-wrap:wrap
+gap:10px;
+flex-wrap:wrap;
 }
+
 .project-links a{
 background:#667eea;
 color:white;
 text-decoration:none;
-padding:8px 18px;
+padding:8px 16px;
 border-radius:20px;
-font-size:0.9em
+font-size:.9em;
 }
-.project-links a:hover{background:#764ba2}
 
-footer{text-align:center;color:white;padding:25px}
+/* Lists */
+.list-box{
+background:#f8f9fa;
+padding:20px;
+border-left:4px solid #667eea;
+border-radius:10px;
+margin-bottom:15px;
+}
+
+footer{
+text-align:center;
+color:white;
+padding:30px;
+}
 </style>
 </head>
 
@@ -98,12 +158,55 @@ footer{text-align:center;color:white;padding:25px}
 
 <nav>
 <ul>
+<li><a href="#about">About</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#skills">Skills</a></li>
 <li><a href="#projects">Projects</a></li>
+<li><a href="#internships">Experience</a></li>
+<li><a href="#certifications">Certifications</a></li>
+<li><a href="#achievements">Achievements</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
 
-<!-- PROJECTS -->
+<section id="about">
+<h2>About Me</h2>
+<p>
+Final-year Electronics and Communication Engineering student at Pragati Engineering College
+with strong interest in Full Stack Web Development. Passionate about building scalable,
+user-friendly web applications and continuously learning modern technologies.
+</p>
+<p style="margin-top:10px">📍 Kakinada, Andhra Pradesh</p>
+</section>
+
+<section id="education">
+<h2>Education</h2>
+<div class="list-box">
+<b>B.Tech – ECE</b><br>
+Pragati Engineering College (2022–2026) | CGPA: 7.5
+</div>
+<div class="list-box">
+<b>Intermediate (MPC)</b><br>
+Aditya Junior College (2020–2022) | 75%
+</div>
+<div class="list-box">
+<b>SSC</b><br>
+Bhashyam School (2020) | 90%
+</div>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<div class="skills-grid">
+<div class="skill-card">Programming: Python, Java, C</div>
+<div class="skill-card">Web: HTML, CSS, JavaScript, React</div>
+<div class="skill-card">Backend: Flask, PHP, SQL</div>
+<div class="skill-card">Databases: MySQL, SQLite</div>
+<div class="skill-card">Tools: Git, GitHub, VS Code</div>
+<div class="skill-card">Cloud: AWS Basics</div>
+</div>
+</section>
+
 <section id="projects">
 <h2>Projects</h2>
 
@@ -111,7 +214,7 @@ footer{text-align:center;color:white;padding:25px}
 
 <div class="project-card">
 <h3>📄 Resume Builder Web App</h3>
-<p>ATS-friendly resume builder with live preview and PDF download.</p>
+<p>ATS-friendly resume builder with live preview & PDF download.</p>
 <p><b>Tech:</b> HTML, CSS, JavaScript</p>
 <div class="project-links">
 <a href="https://github.com/msivateja123/Resume-Builder-web-app" target="_blank">GitHub</a>
@@ -122,7 +225,7 @@ footer{text-align:center;color:white;padding:25px}
 <div class="project-card">
 <h3>🛒 E-Commerce Website</h3>
 <p>PHP & MySQL based shopping platform with admin panel.</p>
-<p><b>Tech:</b> PHP, MySQL, HTML, CSS</p>
+<p><b>Tech:</b> PHP, MySQL</p>
 <div class="project-links">
 <a href="https://github.com/msivateja123/ecommerce-php" target="_blank">GitHub</a>
 </div>
@@ -130,7 +233,7 @@ footer{text-align:center;color:white;padding:25px}
 
 <div class="project-card">
 <h3>👨‍💼 Employee Management System</h3>
-<p>Backend application to manage employee records with CRUD operations.</p>
+<p>Backend application with CRUD operations for employee records.</p>
 <p><b>Tech:</b> Python, SQL, SQLite</p>
 <div class="project-links">
 <a href="https://github.com/msivateja123/employee-management-system" target="_blank">GitHub</a>
@@ -140,7 +243,7 @@ footer{text-align:center;color:white;padding:25px}
 <div class="project-card">
 <h3>🎓 Student Management System</h3>
 <p>Role-based full-stack web app for managing student data.</p>
-<p><b>Tech:</b> Python, Flask, SQLite, HTML, CSS</p>
+<p><b>Tech:</b> Python, Flask, SQLite</p>
 <div class="project-links">
 <a href="https://github.com/msivateja123/student-management-system" target="_blank">GitHub</a>
 </div>
@@ -148,8 +251,8 @@ footer{text-align:center;color:white;padding:25px}
 
 <div class="project-card">
 <h3>📝 Online Quiz Application</h3>
-<p>Quiz system with automated evaluation and backend score calculation.</p>
-<p><b>Tech:</b> Python, MySQL, HTML, JavaScript</p>
+<p>Automated quiz evaluation system with score calculation.</p>
+<p><b>Tech:</b> Python, MySQL, JavaScript</p>
 <div class="project-links">
 <a href="https://github.com/msivateja123/online-quiz-application" target="_blank">GitHub</a>
 </div>
@@ -158,11 +261,37 @@ footer{text-align:center;color:white;padding:25px}
 </div>
 </section>
 
+<section id="internships">
+<h2>Internships & Experience</h2>
+<div class="list-box">Zscaler Zero Trust Cloud Security Virtual Internship</div>
+<div class="list-box">AWS Data Engineering Virtual Internship</div>
+<div class="list-box">Google Developer Program – AICTE</div>
+</section>
+
+<section id="certifications">
+<h2>Certifications</h2>
+<ul>
+<li>Salesforce Certified AI Associate</li>
+<li>Oracle OCI Generative AI Professional</li>
+<li>Zscaler Zero Trust Associate</li>
+<li>Java & SQL – HackerRank</li>
+</ul>
+</section>
+
+<section id="achievements">
+<h2>Achievements</h2>
+<ul>
+<li>Solved 200+ problems on LeetCode</li>
+<li>5⭐ Python & Java on HackerRank</li>
+<li>Lead Coordinator – PRISM 2K25</li>
+</ul>
+</section>
+
 <section id="contact">
 <h2>Contact</h2>
 <p style="text-align:center">
-<a href="mailto:mallipamulasivateja12@gmail.com">📧 Email</a> |
-<a href="tel:8712122339">📱 Phone</a> |
+<a href="mailto:mallipamulasivateja12@gmail.com">Email</a> |
+<a href="tel:8712122339">Phone</a> |
 <a href="https://www.linkedin.com/in/siva-teja-mallipamula-" target="_blank">LinkedIn</a>
 </p>
 </section>
