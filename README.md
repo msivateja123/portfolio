@@ -16,6 +16,7 @@ CSS
 JavaScript
 PHP
 MySQL
+
 📜 Certifications
 AI – Machine Learning Engineer
 Generative AI Virtual Internship (AICTE / EduSkills)
