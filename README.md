@@ -12,15 +12,10 @@ Resume Builder Web App – ATS-friendly resume builder with live preview and PDF
 E-commerce Website (PHP) – PHP & MySQL based e-commerce application with admin panel
 
 🛠️ Technologies Used
-
 HTML
-
 CSS
-
 JavaScript
-
 PHP
-
 MySQL
 
 📜 Certifications
