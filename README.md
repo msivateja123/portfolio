@@ -13,10 +13,10 @@ E-commerce Website (PHP) – PHP & MySQL based e-commerce application with admin
 
 🛠️ Technologies Used
 
-HTML
-CSS
-JavaScript
-PHP
+HTML,
+CSS,
+JavaScript,
+PHP,
 MySQL
 
 📜 Certifications
@@ -34,4 +34,5 @@ Employability Skills – Job Ready
 Email: mallipamulasivateja12@gmail.com
 
 LinkedIn: https://www.linkedin.com/in/siva-teja-mallipamula-
+
 ⭐ Feel free to explore my portfolio and connect with me!
